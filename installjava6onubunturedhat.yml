@@ -9,6 +9,6 @@
     when: ansible_os_family=="Debian"
   - name: install java6 on redhat
     yum:
-     name: open-1.6.0-openjdk
+     name: java-1.6.0-openjdk
      state: present
     when: ansible_os_family=="RedHat"    
