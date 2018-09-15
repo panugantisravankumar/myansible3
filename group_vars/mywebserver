@@ -1,3 +1,4 @@
 ---
 javaonubuntu: openjdk-6-jre
 javaonredhat: java-1.6.0-openjdk
+cpmname: skrit

@@ -1,0 +1,19 @@
+---
+- hosts: mywebserver
+  become: yes
+  tasks:
+  - name: install webserver on redhat
+    yum:
+     name: httpd
+     state: present
+    when: ansible_os_family=="RedHat" 
+  - name: start the httpd service
+    service:
+     name: httpd
+     state: started
+    when: ansible_os_family=="RedHat"
+  - name: copy the index file from CM to all redhat nodes
+    template:
+     src: myindex.j2
+     dest: /var/www/html/index.html
+    when: ansible_os_family=="RedHat"   
