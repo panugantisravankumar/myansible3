@@ -5,7 +5,7 @@
   - include_tasks: myfile.yml
   - name: install webserver on redhat
     yum:
-     name: httpd
+     nameeee: httpd
      state: present
     notify: starthttpd
     ignore_errors: yes
