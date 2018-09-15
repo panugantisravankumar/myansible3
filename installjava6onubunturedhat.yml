@@ -4,11 +4,11 @@
   tasks:
   - name: install java6 on ubuntu
     apt:
-     name: javaonubuntu
+     name: "{{javaonubuntu}}"
      state: present
     when: ansible_os_family=="Debian"
   - name: install java6 on redhat
     yum:
-     name: javaonredhat
+     name: "{{javaonredhat}}"
      state: present
     when: ansible_os_family=="RedHat"    
