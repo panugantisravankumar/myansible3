@@ -2,13 +2,12 @@
 - hosts: mywebserver
   become: yes
   vars:
-   myvar1: sravan
-   myvar2: hassi
+    myvar1: sravan
+    myvar2: hassi
   tasks:
-  - name: display the group var
-  values:
-   debug:
-    msg:"{{cpmname}}"
-   -name: display the playbook var1 values   
-  debug:
-   msg:"{{myvar1}}"
+  - name: display the group var values
+    debug:
+      msg:"{{cpmname}}"
+  - name: display the playbook var1 values   
+    debug:
+      msg:"{{myvar1}}"
