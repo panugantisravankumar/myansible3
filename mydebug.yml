@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: host name
+    command: hostname -f
+    register: myresult
+    when: ansible_os_family=="RedHat"
+  - name: result of host name tasks
+    debug:
+     msg:"{{myresult}}"
+    when: ansible_os_family=="RedHat" 
