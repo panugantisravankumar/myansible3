@@ -7,6 +7,8 @@
     yum:
      name: httpd
      state: present
+    notify: starthttpd
+    ignore_errors: yes
     when: ansible_os_family=="RedHat"
   - name: start the httpd service
     service:
@@ -18,3 +20,9 @@
      src: myindex.j2
      dest: /var/www/html/index.html
     when: ansible_os_family=="RedHat"
+  handlers:
+  - name: start the httpd service
+    service:
+     name: starthttpd
+     state: started
+    when: ansible_os_family=="RedHat" 
